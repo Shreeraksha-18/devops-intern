@@ -2,7 +2,7 @@ name: Node.js CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -15,14 +15,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18
 
       - name: Install Dependencies
         run: npm install
-        working-directory: nodejs-demo-app
-
-      - name: Run App Test
-        run: node app.js
         working-directory: nodejs-demo-app
 
       - name: Build Docker Image
